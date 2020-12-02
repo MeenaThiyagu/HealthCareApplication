@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
-@SpringBootApplication
-@CrossOrigin(origins="http://localhost:4200/")
+
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class PersonController {
 	
