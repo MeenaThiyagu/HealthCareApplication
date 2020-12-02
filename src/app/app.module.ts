@@ -9,19 +9,22 @@ import { PersonComponent } from './person/person.component';
 import { FormsModule } from '@angular/forms';
 import { PersonRegistationService } from './service/person-details.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { HardcodedAuthenticationService } from './service/hardcoded-authentication.service';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,MenuComponent, PersonComponent
+    FooterComponent,MenuComponent, PersonComponent,LoginComponent,LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,
     HttpClientModule
   ],
-  providers: [PersonRegistationService],
+  providers: [PersonRegistationService,HardcodedAuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
