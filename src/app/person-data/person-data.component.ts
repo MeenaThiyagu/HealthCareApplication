@@ -31,5 +31,12 @@ export class PersonDataComponent implements OnInit {
    let resp=this.service.deleteUser(person);
    resp.subscribe((data)=>this.persons=data);
    console.log("inside tsof delete");
-      }
+  }
+
+  public updateThisPerson(user){
+    let resp=this.service.updateThisPerson(user);
+    
+    resp.subscribe((data:any)=>this.persons=data);
+    console.log(resp+" is response ");
+  }
 }

@@ -1,3 +1,6 @@
+
+
+
 <div class="container">
     <div class="row col-md-6 col-md-offset-2 custyle">
     <table class="table table-striped custab">
@@ -18,7 +21,7 @@
             <td>{{user.lastName}}</td>
             <td>{{user.emailId}}</td>
             <td>{{user.location}}</td>
-            <td><button (click)="getAllPersons()" class="btn btn-success">Update</button></td>
+            <td><button (click)="updateThisPerson(user)" class="btn btn-success">Update</button></td>
             <td><button (click)="deleteUser(user.emailId)" class="btn btn-danger">Delete</button></td>
         </tr>
     </tbody>

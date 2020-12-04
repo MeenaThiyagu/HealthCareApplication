@@ -26,7 +26,13 @@ export class PersonRegistationService {
     return this.http.get("http://localhost:4203/persons/"+emailId);
   }
 
-  public deleteUser(id){
-    return this.http.delete("http://localhost:4203/persons/"+id);
+  public deleteUser(emailid){
+    return this.http.delete("http://localhost:4203/persons/"+emailid);
+  }
+
+  public updateThisPerson(personModel){
+    return this.http.post<PersonModel>("http://localhost:4203/persons",personModel,{responseType:'text' as 'json'});
+
+    // return this.http.post("http://localhost:4203/persons/",body);
   }
 }
