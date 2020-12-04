@@ -10,7 +10,7 @@ import { PersonRegistationService } from '../service/person-details.service';
 export class PersonComponent implements OnInit {
  
  public personModel: PersonModel={
-    firstName:"",   lastName:"",    emailId:"",    location:"",personId:""
+    firstName:"",   lastName:"",    emailId:"",    location:"",personId:0
  };
   message:any;
  

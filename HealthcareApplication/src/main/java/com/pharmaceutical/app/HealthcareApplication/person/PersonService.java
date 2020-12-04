@@ -39,9 +39,9 @@ public class PersonService {
 			personRep.save(personRef);
 //		}
 	}
-	public String deleteThisPerson(int id) {
+	public String deleteThisPerson(String emailId) {
 		//personLists.add(personRef);//To edit the POST body hence POSTMAN tool is used
-		personRep.deleteById(id);
-		return "Person is removed"+id;
+		personRep.deleteByEmailId(emailId);
+		return "Person is removed"+emailId;
 	}
 }

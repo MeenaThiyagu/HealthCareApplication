@@ -3,5 +3,5 @@ export interface PersonModel{
     lastName:string,
     emailId:string,
     location:string,
-    personId: any
+    personId: number
 }

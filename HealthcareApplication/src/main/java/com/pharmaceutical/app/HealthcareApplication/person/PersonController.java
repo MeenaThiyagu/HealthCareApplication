@@ -45,8 +45,8 @@ public class PersonController {
 		personServiceObj.updateThisPerson(personRef);
 	}
 //	
-	@RequestMapping(method=RequestMethod.DELETE,value="/persons/{id}")
-	public void deleteThisPerson(@PathVariable int id) {
-		personServiceObj.deleteThisPerson(id);
+	@RequestMapping(method=RequestMethod.DELETE,value="/persons/{emailId}")
+	public void deleteThisPerson(@PathVariable String emailId) {
+		personServiceObj.deleteThisPerson(emailId);
 	}
 }
