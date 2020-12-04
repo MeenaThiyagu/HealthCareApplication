@@ -12,19 +12,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HardcodedAuthenticationService } from './service/hardcoded-authentication.service';
 import { LogoutComponent } from './logout/logout.component';
+import { RouteguardService } from './service/routeguard.service';
+import { PersonDataComponent } from './person-data/person-data.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,MenuComponent, PersonComponent,LoginComponent,LogoutComponent
+    FooterComponent,MenuComponent, PersonComponent,LoginComponent,LogoutComponent, PersonDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,
     HttpClientModule
   ],
-  providers: [PersonRegistationService,HardcodedAuthenticationService],
+  providers: [PersonRegistationService,HardcodedAuthenticationService,RouteguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

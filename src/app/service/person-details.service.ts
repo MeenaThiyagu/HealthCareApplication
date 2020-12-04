@@ -6,7 +6,7 @@ import { PersonModel } from '../personModel';
   providedIn: 'root'
 })
 export class PersonRegistationService {
-
+  message:any;
 
   constructor(private http:HttpClient) { }
 
@@ -16,12 +16,14 @@ export class PersonRegistationService {
     // return this.http.post("http://localhost:4203/persons/",body);
   }
 
-  public getPersons(){
-    return this.http.get("http://localhost:4203/persons");
+  public getAllPersons(){
+    console.log("inside service");
+    console.log(this.http.get<PersonModel>("http://localhost:4203/persons/"));
+    return this.http.get<PersonModel>("http://localhost:4203/persons/");
   }
 
-  public getUserByFirstName(firstName){
-    return this.http.get("http://localhost:4203/persons/"+firstName);
+  public getUserByFirstName(emailId){
+    return this.http.get("http://localhost:4203/persons/"+emailId);
   }
 
   public deleteUser(id){

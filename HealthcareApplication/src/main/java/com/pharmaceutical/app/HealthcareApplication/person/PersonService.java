@@ -21,6 +21,7 @@ public class PersonService {
 		//return personLists;
 		List<Person> personLists=new ArrayList<>();		
 		personRep.findAll().forEach(personLists::add);
+		System.out.println("Persons are "+personLists);
 		return personLists;
 	}
 	public Person getThisPerson(String name){

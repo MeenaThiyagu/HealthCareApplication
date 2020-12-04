@@ -18,6 +18,11 @@ public class Person {
 	public int getId() {
 		return personId;
 	}
+	@Override
+	public String toString() {
+		return "Person [personId=" + personId + ", firstName=" + firstName + ", lastName=" + lastName + ", location="
+				+ location + ", emailId=" + emailId + "]";
+	}
 	public void setId(int id) {
 		this.personId = id;
 	}
