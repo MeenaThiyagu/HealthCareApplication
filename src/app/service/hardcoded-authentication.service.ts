@@ -24,10 +24,8 @@ export class HardcodedAuthenticationService {
   return !(validatedUser===null)
   }
 
-  isUserLoggedOut(){
-  
+  isUserLoggedOut(){  
     sessionStorage.removeItem('userSession');
-    return true;
-  
+    return true;  
   }
 }  

@@ -1,0 +1,32 @@
+
+
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Drug ID</th>
+            <th>Drug name</th>
+            <th>Location Available</th>
+            <th>Manufacturer</th>
+            <th>Marketing mode</th>
+            <th>Expiry At</th>           
+        </tr>
+    </thead>
+    <tbody>    
+        <tr *ngFor="let data of drugs">
+            <td>{{data.id}}</td> 
+            <td>{{data.name}}</td>
+            <td>{{data.availableAt}}</td>
+            <td>{{data.manufacturer}}</td>
+            <td>{{data.marketingStatus}}</td>
+            <td>{{data.expiryAt}}</td>
+            <td><button (click)="updateThisDrug(data)" class="btn btn-success">Update</button></td>
+            <td><button (click)="deleteThisDrug(data)" class="btn btn-danger">Delete</button></td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+</div>
+<!--<button (click)="deletePerson()" class="btn btn-warning">Delete</button>-->

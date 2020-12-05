@@ -18,8 +18,10 @@ public class DrugService {
 		return drugLists;
 	}
 	public Drug getThisDrug(String drugName){
-		return drugLists.stream().filter( given-> given.getName().equals(drugName)).findFirst().get();
+		return drugRep.findByName(drugName);
 	}
+		
+
 	public void addThisDrug(Drug drugRef) {
 	//	drugLists.add(drugRef);//To edit the POST body hence POSTMAN tool is used
 		drugRep.save(drugRef);
@@ -28,9 +30,9 @@ public class DrugService {
 		//drugLists.add(drugRef);//To edit the POST body hence POSTMAN tool is used
 		drugRep.save(drugRef);
 	}
-	public void deleteThisDrug(String drugName) {
-		drugLists.removeIf(given->given.getName().equals(drugName));//To edit the POST body hence POSTMAN tool is used
-		
+	public void deleteThisDrug(String name) {
+		//drugLists.removeIf(given->given.getName().equals(drugName));//To edit the POST body hence POSTMAN tool is used
+		drugRep.deleteByName(name);
 	}
 	public void updateThisDrug(Drug drugRef) {
 		// TODO Auto-generated method stub

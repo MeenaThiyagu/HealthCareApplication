@@ -23,8 +23,8 @@ public class Person {
 		return "Person [personId=" + personId + ", firstName=" + firstName + ", lastName=" + lastName + ", location="
 				+ location + ", emailId=" + emailId + "]";
 	}
-	public void setId(int id) {
-		this.personId = id;
+	public void setId(int personId) {
+		this.personId = personId;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -53,9 +53,9 @@ public class Person {
 	public Person() {
 		
 	}
-	public Person(int id, String firstName, String lastName, String location, String emailId) {
+	public Person(int personId, String firstName, String lastName, String location, String emailId) {
 		super();
-		this.personId = id;
+		this.personId = personId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.location = location;

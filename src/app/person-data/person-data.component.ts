@@ -16,21 +16,35 @@ export class PersonDataComponent implements OnInit {
   
   
   ngOnInit(): void {
-    let resp=this.service.getAllPersons();
-    let op=resp.subscribe((data)=>this.persons=data);
-    console.log("O/p is"+op);
-    console.log("inside ngOnInit of ts");
+    this.getAllPersons();
+    
   }
   public getAllPersons(){
     let resp=this.service.getAllPersons();
-    resp.subscribe((data)=>this.persons=data);
-    console.log("inside ts");
+    resp.subscribe((data)=>{
+  
+      this.persons=data
+    });
+ 
   }
 
   public deleteUser(person:any){
-   let resp=this.service.deleteUser(person);
-   resp.subscribe((data)=>this.persons=data);
-   console.log("inside tsof delete");
+    const id=person.id;
+    console.log(person);
+   let resp=this.service.deleteUser(person.emailId);
+
+   resp.subscribe(
+    (data)=>{
+      this.persons = this.persons.filter((x,y)=> {//x=>
+        return x.id != id;
+      })
+      this.getAllPersons();
+    },
+    (error) => alert("Delete operation failed")
+    
+  );
+  
+  console.log("inside tsof delete");
   }
 
   public updateThisPerson(user){

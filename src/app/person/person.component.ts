@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PersonModel } from '../personModel';
 import { PersonRegistationService } from '../service/person-details.service';
 
@@ -15,7 +16,7 @@ export class PersonComponent implements OnInit {
   message:any;
  
 
-  constructor(private service:PersonRegistationService) { }
+  constructor(private service:PersonRegistationService,private _router:Router) { }
 
   ngOnInit() {
     // this.personModel.firstName="";
@@ -28,6 +29,7 @@ export class PersonComponent implements OnInit {
 public addNow(){
 let resp=this.service.doRegistration(this.personModel);
 resp.subscribe((data:any)=>this.message=data);
+this._router.navigateByUrl('actOnPerson')
 }
 
 }

@@ -7,25 +7,38 @@ import com.pharmaceutical.app.HealthcareApplication.person.Person;
 @Entity
 public class Drug {
 	@Id
-	@GeneratedValue
-	private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
 	private String name;
 	private String manufacturer;
-	private String expiryDate;
+	private String marketingStatus;
+	private String expiryAt;
 	private String availableAt;
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Person personObj;
 	
-	public Person getPersonObj() {
-		return personObj;
+	
+	public String getAvailableAt() {
+		return availableAt;
 	}
-	public void setPersonObj(Person personObj) {
-		this.personObj = personObj;
+	public void setAvailableAt(String availableAt) {
+		this.availableAt = availableAt;
 	}
-	public String getId() {
+	public Drug() {
+		
+	}
+	public Drug( String name, String manufacturer, String marketingStatus, String expiryAt,String availableAt, int id) {
+		super();
+		this.name = name;
+		this.manufacturer = manufacturer;
+		this.marketingStatus = marketingStatus;
+		this.expiryAt = expiryAt;
+		this.availableAt=availableAt;
+		this.id=id;
+		
+	}
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -40,29 +53,17 @@ public class Drug {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	public String getExpiryDate() {
-		return expiryDate;
+	public String getMarketingStatus() {
+		return marketingStatus;
 	}
-	public void setExpiryDate(String expiryDate) {
-		this.expiryDate = expiryDate;
+	public void setMarketingStatus(String marketingStatus) {
+		this.marketingStatus = marketingStatus;
 	}
-	public String getAvailableAt() {
-		return availableAt;
+	public String getExpiryAt() {
+		return expiryAt;
 	}
-	public void setAvailableAt(String availableAt) {
-		this.availableAt = availableAt;
-	}
-	
-	public Drug() {
-		
-	}
-	public Drug( String name, String manufacturer, String expiryDate, String availableAt,int id) {
-		super();
-		this.name = name;
-		this.manufacturer = manufacturer;
-		this.expiryDate = expiryDate;
-		this.availableAt = availableAt;
-		this.personObj=new Person(id,"","","","");
+	public void setExpiryAt(String expiryAt) {
+		this.expiryAt = expiryAt;
 	}
 	
 	

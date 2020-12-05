@@ -12,6 +12,7 @@ public interface PersonRepository extends CrudRepository<Person,Object> {
 	//method to get given person details
 	
 	public Person findByFirstName(String name);
+	
 	@Transactional
 	public String deleteByEmailId(String emailId);
 }

@@ -14,12 +14,15 @@ import { HardcodedAuthenticationService } from './service/hardcoded-authenticati
 import { LogoutComponent } from './logout/logout.component';
 import { RouteguardService } from './service/routeguard.service';
 import { PersonDataComponent } from './person-data/person-data.component';
-
+import { DrugComponent } from './drug/drug.component';
+import { DrugDataComponent } from './drug-data/drug-data.component';
+import {ErrorComponent} from './error/error.component';
+import { WelcomeUserComponent } from './welcome-user/welcome-user.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent,MenuComponent, PersonComponent,LoginComponent,LogoutComponent, PersonDataComponent
+    AppComponent,ErrorComponent,
+    FooterComponent,MenuComponent, PersonComponent,LoginComponent,LogoutComponent, PersonDataComponent, DrugComponent, DrugDataComponent, WelcomeUserComponent
   ],
   imports: [
     BrowserModule,
