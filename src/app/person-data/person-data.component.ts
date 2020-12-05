@@ -48,8 +48,8 @@ export class PersonDataComponent implements OnInit {
   }
 
   public updateThisPerson(person,emailId){
-    let resp=this.service.updateThisPerson(person,person.emailId);
-    
+    this.service.doRegistration(person);
+    let resp=this.service.updateThisPerson(person,person.emailId);    
     resp.subscribe((data:any)=>{console.log('Data sent is',data)},
     (error) => alert("Update operation failed"));
     
