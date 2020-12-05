@@ -22,7 +22,8 @@
             <td>{{data.manufacturer}}</td>
             <td>{{data.marketingStatus}}</td>
             <td>{{data.expiryAt}}</td>
-            <td><button (click)="updateThisDrug(data)" class="btn btn-success">Update</button></td>
+            <td><button class="btn btn-success">
+                <a [routerLink]="['../drug',data]">Update</a></button></td>
             <td><button (click)="deleteThisDrug(data)" class="btn btn-danger">Delete</button></td>
         </tr>
     </tbody>

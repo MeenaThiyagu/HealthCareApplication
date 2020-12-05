@@ -29,8 +29,8 @@ export class DrugRegistrationServiceService {
   public getDrugByName(name){
     return this.http.get("http://localhost:4203/drugs/"+name);
   }
-  public updateThisDrug(drugModel){
-    return this.http.post<DrugModel>("http://localhost:4203/drugs",drugModel);
+  public updateThisDrug(drugModel,name){
+    return this.http.post<DrugModel>("http://localhost:4203/drugs/"+name,drugModel);
 
     // return this.http.post("http://localhost:4203/persons/",body);
   }

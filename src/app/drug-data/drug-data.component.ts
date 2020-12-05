@@ -44,11 +44,5 @@ export class DrugDataComponent implements OnInit {
   console.log("inside tsof delete");
   }
 
-  public updateThisDrug(drug){
-    let resp=this.service.updateThisDrug(drug);
-    
-    resp.subscribe((data:any)=>this.drugs=data);
-    console.log(resp+" is response ");
-  }
-
+  
 }

@@ -19,6 +19,8 @@ const routes: Routes = [
   { path:'',component:LoginComponent},
   { path:'welcome/:name',component:WelcomeUserComponent,canActivate:[RouteguardService]},
   {path:'actOnPerson',component:PersonDataComponent,canActivate:[RouteguardService]},
+  {path:'person/:emailId',component:PersonComponent,canActivate:[RouteguardService]},
+  {path:'drug/:name',component:DrugComponent,canActivate:[RouteguardService]},
   {path:'drug',component:DrugComponent},
   {path:'actOnDrug',component:DrugDataComponent},
   { path:'**',component:ErrorComponent}

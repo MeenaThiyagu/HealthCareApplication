@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PersonModel } from '../personModel';
 import { PersonRegistationService } from '../service/person-details.service';
 
@@ -16,13 +16,14 @@ export class PersonComponent implements OnInit {
   message:any;
  
 
-  constructor(private service:PersonRegistationService,private _router:Router) { }
+  constructor(private service:PersonRegistationService,private _router:Router,
+    private _route:ActivatedRoute) { }
 
   ngOnInit() {
-    // this.personModel.firstName="";
-    // this.personModel.lastName="";
-    // this.personModel.emailId="";
-    // this.personModel.location="";
+   this.personModel.emailId=this._route.snapshot.paramMap.get("emailId");
+   this.personModel.firstName=this._route.snapshot.paramMap.get("firstName");
+   this.personModel.lastName=this._route.snapshot.paramMap.get("lastName");
+   this.personModel.location=this._route.snapshot.paramMap.get("location");
   }
   
 

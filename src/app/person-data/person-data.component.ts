@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonRegistationService } from '../service/person-details.service';
-
 import { HttpClient } from '@angular/common/http';
 import { PersonModel } from '../personModel';
 
@@ -43,15 +42,8 @@ export class PersonDataComponent implements OnInit {
     (error) => alert("Delete operation failed")
     
   );
-  
   console.log("inside tsof delete");
   }
 
-  public updateThisPerson(person,emailId){
-    this.service.doRegistration(person);
-    let resp=this.service.updateThisPerson(person,person.emailId);    
-    resp.subscribe((data:any)=>{console.log('Data sent is',data)},
-    (error) => alert("Update operation failed"));
-    
-  }
+  
 }
