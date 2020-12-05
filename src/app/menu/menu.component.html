@@ -3,9 +3,9 @@
         <div class="navbar-brand"><a href="https://www.google.com">Google</a></div>
         
         <ul class="navbar-nav">
-            <li><a *ngIf='!hardcodedAuthenticationService.isValidUserLogin()' routerLink="/welcome/MeenaT"class="nav-link">Welcome</a></li>
-            <li><a *ngIf='!hardcodedAuthenticationService.isValidUserLogin()'  routerLink="/actOnPerson"class="nav-link">Persons</a></li> 
-            <li><a *ngIf='hardcodedAuthenticationService.isValidUserLogin()' routerLink="/actOnDrug"class="nav-link">Drugs</a></li> 
+            <li><a *ngIf='hardcodedAuthenticationService.isValidUserLogin()' routerLink="/welcome/MeenaT"class="nav-link">Welcome</a></li>
+            <li><a *ngIf='hardcodedAuthenticationService.isValidUserLogin()'  routerLink="/actOnPerson"class="nav-link">Persons</a></li> 
+            <li><a  *ngIf='hardcodedAuthenticationService.isValidUserLogin()' routerLink="/actOnDrug"class="nav-link">Drugs</a></li> 
         </ul>
         <ul class="navbar-nav navbar-collapse justify-content-end">
             <li><a *ngIf='!hardcodedAuthenticationService.isValidUserLogin()'routerLink="/login" class="nav-link">Login</a></li>

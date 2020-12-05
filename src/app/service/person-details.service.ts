@@ -30,9 +30,10 @@ export class PersonRegistationService {
     return this.http.delete("http://localhost:4203/persons/"+emailid);
   }
 
-  public updateThisPerson(personModel){
-    return this.http.post<PersonModel>("http://localhost:4203/persons",personModel,{responseType:'text' as 'json'});
-
+  public updateThisPerson(personModel,emailId){
+    console.log('Inside update service method',personModel,emailId);
+    return this.http.put<PersonModel>("http://localhost:4203/persons/"+emailId,personModel,{responseType:'text' as 'json'});
+    
     // return this.http.post("http://localhost:4203/persons/",body);
   }
 }

@@ -35,14 +35,14 @@ public class DrugController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/drugs")
-	public void addDrug(@RequestBody Drug drugRef) {
-		drugServiceObj.addThisDrug(drugRef);
+	public Drug addDrug(@RequestBody Drug drugRef) {
+		return drugServiceObj.addThisDrug(drugRef);
 	}
 	
 	@Version
-	@RequestMapping(method=RequestMethod.PUT,value="/drugs/")
-	public void updateThisDrug(@RequestBody Drug drugRef) {
-		drugServiceObj.updateThisDrug(drugRef);
+	@RequestMapping(method=RequestMethod.PUT,value="/drugs/{name}")
+	public void updateThisDrug(@RequestBody Drug drugRef,@PathVariable String name) {
+		drugServiceObj.updateThisDrug(drugRef,name);
 	}
 //	
 	@RequestMapping(method=RequestMethod.DELETE,value="/drugs/{name}")

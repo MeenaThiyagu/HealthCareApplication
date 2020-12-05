@@ -47,10 +47,11 @@ export class PersonDataComponent implements OnInit {
   console.log("inside tsof delete");
   }
 
-  public updateThisPerson(user){
-    let resp=this.service.updateThisPerson(user);
+  public updateThisPerson(person,emailId){
+    let resp=this.service.updateThisPerson(person,person.emailId);
     
-    resp.subscribe((data:any)=>this.persons=data);
-    console.log(resp+" is response ");
+    resp.subscribe((data:any)=>{console.log('Data sent is',data)},
+    (error) => alert("Update operation failed"));
+    
   }
 }

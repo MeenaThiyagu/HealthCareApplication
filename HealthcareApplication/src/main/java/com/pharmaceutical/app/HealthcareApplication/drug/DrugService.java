@@ -10,7 +10,7 @@ public class DrugService {
 	@Autowired
 	private DrugRepository drugRep;
 	private List<Drug> drugLists=new ArrayList<>();	
-	
+	private static int id;
 	public List<Drug> getAllDrugs(){
 		//return drugLists;
 		List<Drug> drugLists=new ArrayList<>();		
@@ -20,11 +20,10 @@ public class DrugService {
 	public Drug getThisDrug(String drugName){
 		return drugRep.findByName(drugName);
 	}
-		
+	
 
-	public void addThisDrug(Drug drugRef) {
-	//	drugLists.add(drugRef);//To edit the POST body hence POSTMAN tool is used
-		drugRep.save(drugRef);
+	public Drug addThisDrug(Drug drugRef) {
+	return drugRep.save(drugRef);
 	}
 	public void updateThisDrug(String drugName,Drug drugRef) {
 		//drugLists.add(drugRef);//To edit the POST body hence POSTMAN tool is used
@@ -34,9 +33,15 @@ public class DrugService {
 		//drugLists.removeIf(given->given.getName().equals(drugName));//To edit the POST body hence POSTMAN tool is used
 		drugRep.deleteByName(name);
 	}
-	public void updateThisDrug(Drug drugRef) {
+	public Drug updateThisDrug(Drug drugRef, String name) {
 		// TODO Auto-generated method stub
-		drugRep.save(drugRef);
+		if(drugRef.getId()==-1) {
+			drugRef.setId(++id);
+			return drugRep.save(drugRef);
+		}
+		else 
+			this.deleteThisDrug(name);
+			return addThisDrug(drugRef);
 	}
 //	public List<Drug> getAllDrugsByPerson(String fname) {
 //		List<Drug> drugsList=new ArrayList<>();

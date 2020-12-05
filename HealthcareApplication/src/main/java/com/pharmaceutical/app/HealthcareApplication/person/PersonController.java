@@ -40,9 +40,9 @@ public class PersonController {
 	}
 	
 	@Version
-	@RequestMapping(method=RequestMethod.PUT,value="/persons/")
-	public void updateThisPerson(@RequestBody Person personRef) {
-		personServiceObj.updateThisPerson(personRef);
+	@RequestMapping(method=RequestMethod.PUT,value="/persons/{emailId}")
+	public void updateThisPerson(@RequestBody Person personRef,@PathVariable String emailId) {
+		personServiceObj.updateThisPerson(personRef,emailId);
 	}
 //	
 	@RequestMapping(method=RequestMethod.DELETE,value="/persons/{emailId}")
