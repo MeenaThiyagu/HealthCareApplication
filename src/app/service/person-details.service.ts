@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PersonModel } from '../personModel';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import { PersonModel } from '../personModel';
 export class PersonRegistationService {
   message:any;
 
+
   constructor(private http:HttpClient) { }
+  
 
   public doRegistration(personModel){
     return this.http.post<PersonModel>("http://localhost:4203/persons",personModel,{responseType:'text' as 'json'});

@@ -12,10 +12,12 @@ import { Injectable } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  unFromComp='MeenaT'
-  pwFromComp=''
+  unFromComp:string;
+  pwFromComp:string;
   errorMessage="Invalid Credentails";
   isInvalidLogin=false;
+  successMessage: string;
+  loginSuccess = false;
 
   constructor(private router :Router, 
     private hardcodedAuthenticationService: HardcodedAuthenticationService) 
@@ -26,16 +28,26 @@ export class LoginComponent implements OnInit {
 
   HandleLogin(){
     console.log("Hello  "+ this.unFromComp);
-   // if(this.unFromComp==='MeenaT' && this.pwFromComp==='Hello123!'){
-    if(this.hardcodedAuthenticationService.authenticate(this.unFromComp,this.pwFromComp)){
-      this.isInvalidLogin=false
-      this.router.navigate(['welcome',this.unFromComp])
-      //Redirecting to Welcome component
-    }
-    else{
-    this.isInvalidLogin=true
-   // this.router.navigate(['error'])
-    }
+  //  // if(this.unFromComp==='MeenaT' && this.pwFromComp==='Hello123!'){
+  //   if(this.hardcodedAuthenticationService.authenticate(this.unFromComp,this.pwFromComp)){
+  //     this.isInvalidLogin=false
+  //     this.router.navigate(['welcome',this.unFromComp])
+  //     //Redirecting to Welcome component
+  //   }
+  //   else{
+  //   this.isInvalidLogin=true
+  //   this.router.navigate(['error'])
+  //   }
+
+    this.hardcodedAuthenticationService.authenticate(this.unFromComp, this.pwFromComp).subscribe((result)=> {
+      this.isInvalidLogin = false;
+      this.loginSuccess = true;
+      this.successMessage = 'Login Successful.';
+      this.router.navigate(['welcome',this.unFromComp]);
+    }, () => {
+      this.isInvalidLogin = true;
+      this.loginSuccess = false;
+    });   
   }
  
 }

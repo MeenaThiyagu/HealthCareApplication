@@ -28,6 +28,7 @@ public class PersonService {
 	public Person getThisPerson(String name){
 		//return personLists.stream().filter( given-> given.getFirstName().equals(firstName)).findFirst().get();
 	return	personRep.findByFirstName(name);
+	
 		
 	}
 	public Person addThisPerson(Person personRef) {
