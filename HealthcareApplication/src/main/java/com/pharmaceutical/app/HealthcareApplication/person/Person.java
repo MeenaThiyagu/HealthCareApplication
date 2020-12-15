@@ -5,7 +5,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
+import java.util.*;
 @Entity
 public class Person {
 	@Id
@@ -15,15 +16,35 @@ public class Person {
 	private String lastName;
 	private String location;
 	private String emailId;
-	public int getId() {
-		return personId;
-	}
+	@OneToMany(targetEntity = Drug.class,cascade=CascadeType.ALL)
+	@JoinColumn(name="fk_person_drugs", referencedColumnName = "personId")
+	private List<Drug> drugsList ;
 	@Override
 	public String toString() {
 		return "Person [personId=" + personId + ", firstName=" + firstName + ", lastName=" + lastName + ", location="
-				+ location + ", emailId=" + emailId + "]";
+				+ location + ", emailId=" + emailId + ", drugsList=" + drugsList + "]";
 	}
-	public void setId(int personId) {
+	public List<Drug> getDrugsList() {
+		return drugsList;
+	}
+	public void setDrugsList(List<Drug> drugsList) {
+		this.drugsList = drugsList;
+	}
+	public Person(int personId, String firstName, String lastName, String location, String emailId,
+			List<Drug> drugsList) {
+		super();
+		this.personId = personId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.location = location;
+		this.emailId = emailId;
+		this.drugsList = drugsList;
+	}
+	public int getPersonId() {
+		return personId;
+	}
+	
+	public void setPersonId(int personId) {
 		this.personId = personId;
 	}
 	public String getFirstName() {
@@ -53,13 +74,6 @@ public class Person {
 	public Person() {
 		
 	}
-	public Person(int personId, String firstName, String lastName, String location, String emailId) {
-		super();
-		this.personId = personId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.location = location;
-		this.emailId = emailId;
-	}	
+		
 	
 }

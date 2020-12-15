@@ -1,12 +1,17 @@
 package com.pharmaceutical.app.HealthcareApplication.person;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PersonRepository extends CrudRepository<Person,String> {
+import com.pharmaceutical.app.HealthcareApplication.dto.OrderResponse;
+
+public interface PersonRepository extends JpaRepository<Person,String> {
 
 	//method to get All person
 	//method to get given person details
@@ -15,6 +20,11 @@ public interface PersonRepository extends CrudRepository<Person,String> {
 	
 	@Transactional
 	public String deleteByEmailId(String emailId);
+	
+	@Query("SELECT new com.pharmaceutical.app.HealthcareApplication.dto.OrderResponse"
+			+ "(p.emailId, d.name) FROM Person p JOIN p.drugsList d")
+	public List<OrderResponse> getPurchaseDetails();
+	
 	
 	//call SP from 
 	//JOIN condition execute

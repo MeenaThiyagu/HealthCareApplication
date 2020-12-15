@@ -12,11 +12,7 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRep;
 	private static int id;
-	private List<Person> personLists=new ArrayList<>(Arrays.asList(			
-			new Person(101, "Thomas","Henry", "New Jersey","thomash@gmail.com"),
-			new Person(102, "Annie","John", "Florida","anniej@gmail.com"),
-			new Person(103, "John","Tim", "Atlanta","johnt@gmail.com")
-			));	
+	private List<Person> personLists=new ArrayList<>();	
 	
 	public List<Person> getAllPersons(){
 		//return personLists;
@@ -37,8 +33,8 @@ public class PersonService {
 	}
 	public Person updateThisPerson(Person personRef,String emailId) {
 		//personLists.add(personRef);//To edit the POST body hence POSTMAN tool is used
-		if(personRef.getId()==-1) {
-			personRef.setId(++id);
+		if(personRef.getPersonId()==-1) {
+			personRef.setPersonId(++id);
 			return personRep.save(personRef);
 		}
 		else 

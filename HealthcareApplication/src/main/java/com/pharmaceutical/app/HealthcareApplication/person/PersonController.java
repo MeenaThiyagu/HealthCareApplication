@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pharmaceutical.app.HealthcareApplication.Response;
 import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
 
 @CrossOrigin(origins="http://localhost:4200")
@@ -35,8 +36,9 @@ public class PersonController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/persons")
-	public void addPerson(@RequestBody Person personRef) {
+	public Response addPerson(@RequestBody Person personRef) {
 		personServiceObj.addThisPerson(personRef);
+		return new Response(personRef.getPersonId()+" inserted ",Boolean.TRUE);
 	}
 	
 	@Version

@@ -14,8 +14,14 @@ public class Drug {
 	private String marketingStatus;
 	private String expiryAt;
 	private String availableAt;
-	
-	
+//	private int col_fk_personId;
+//	
+//	public int getCol_fk_personId() {
+//		return col_fk_personId;
+//	}
+//	public void setCol_fk_personId(int col_fk_personId) {
+//		this.col_fk_personId = col_fk_personId;
+//	}
 	public String getAvailableAt() {
 		return availableAt;
 	}
