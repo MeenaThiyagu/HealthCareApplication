@@ -3,8 +3,12 @@ package com.pharmaceutical.app.HealthcareApplication.person;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+import com.pharmaceutical.app.HealthcareApplication.exceptions.DataNotFoundException;
 
 @CrossOrigin(origins="http://localhost:4200/")
 @Service//spring creates instance . it is a stereotype annotation.
@@ -23,9 +27,11 @@ public class PersonService {
 	}
 	public Person getThisPerson(String name){
 		//return personLists.stream().filter( given-> given.getFirstName().equals(firstName)).findFirst().get();
-	return	personRep.findByFirstName(name);
-	
-		
+	Person pObj=personRep.findByFirstName(name);
+		if(pObj==null) {
+			throw new DataNotFoundException("Person with name "+name+ " is not found");
+		}
+	return pObj;
 	}
 	public Person addThisPerson(Person personRef) {
 		//personLists.add(personRef);//To edit the POST body hence POSTMAN tool is used

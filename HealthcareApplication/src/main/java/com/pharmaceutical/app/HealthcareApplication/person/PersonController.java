@@ -37,7 +37,7 @@ public class PersonController {
 	
 	@RequestMapping(method=RequestMethod.POST,value="/persons")
 	public Response addPerson(@RequestBody Person personRef) {
-		personServiceObj.addThisPerson(personRef);
+	//	return personServiceObj.addThisPerson(personRef);
 		return new Response(personRef.getPersonId()+" inserted ",Boolean.TRUE);
 	}
 	
