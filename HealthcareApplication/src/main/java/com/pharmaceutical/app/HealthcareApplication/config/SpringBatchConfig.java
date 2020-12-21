@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
-import com.pharmaceutical.app.HealthcareApplication.dto.Drug;
+import com.pharmaceutical.app.HealthcareApplication.dto.*;
 
 @Configuration
 @EnableBatchProcessing
