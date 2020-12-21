@@ -14,8 +14,9 @@ export class PersonRegistationService {
   
 
   public doRegistration(personModel){
+    console.log("Inside service of person" ,this.http.post<PersonModel>("http://localhost:4203/persons",personModel,{responseType:'text' as 'json'}));
     return this.http.post<PersonModel>("http://localhost:4203/persons",personModel,{responseType:'text' as 'json'});
-
+    
     // return this.http.post("http://localhost:4203/persons/",body);
   }
 

@@ -6,6 +6,7 @@ import com.pharmaceutical.app.HealthcareApplication.person.Person;
 
 @Entity
 public class Drug {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -40,6 +41,12 @@ public class Drug {
 		this.availableAt=availableAt;
 		this.id=id;
 		
+	}
+	
+	@Override
+	public String toString() {
+		return "Drug [id=" + id + ", name=" + name + ", manufacturer=" + manufacturer + ", marketingStatus="
+				+ marketingStatus + ", expiryAt=" + expiryAt + ", availableAt=" + availableAt + "]";
 	}
 	public int getId() {
 		return id;

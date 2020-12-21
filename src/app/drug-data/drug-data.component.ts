@@ -8,10 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DrugDataComponent implements OnInit {
   drugs:any;
+  data:Array<any>
   constructor(private service:DrugRegistrationServiceService,
-    private http: HttpClient) { }
+    private http: HttpClient) { 
+      this.data=new Array<any>()
+    }
   
-  
+  totalRecords:number
+  page: number=1
+
   ngOnInit(): void {
     this.getAllDrugs();
     

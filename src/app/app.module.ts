@@ -18,7 +18,7 @@ import { DrugComponent } from './drug/drug.component';
 import { DrugDataComponent } from './drug-data/drug-data.component';
 import {ErrorComponent} from './error/error.component';
 import { WelcomeUserComponent } from './welcome-user/welcome-user.component';
-
+import { NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,ErrorComponent,
@@ -27,7 +27,8 @@ import { WelcomeUserComponent } from './welcome-user/welcome-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [PersonRegistationService,HardcodedAuthenticationService,RouteguardService],
   bootstrap: [AppComponent]

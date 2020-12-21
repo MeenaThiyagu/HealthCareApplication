@@ -1,33 +1,57 @@
-
-
-
-<div class="container">
-    <div class="row col-md-6 col-md-offset-2 custyle">
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>Drug ID</th>
-            <th>Drug name</th>
-            <th>Location Available</th>
-            <th>Manufacturer</th>
-            <th>Marketing mode</th>
-            <th>Expiry At</th>           
-        </tr>
-    </thead>
-    <tbody>    
-        <tr *ngFor="let data of drugs">
-            <td>{{data.id}}</td> 
-            <td>{{data.name}}</td>
-            <td>{{data.availableAt}}</td>
-            <td>{{data.manufacturer}}</td>
-            <td>{{data.marketingStatus}}</td>
-            <td>{{data.expiryAt}}</td>
-            <td><button class="btn btn-success">
-                <a [routerLink]="['../drug',data]">Update</a></button></td>
-            <td><button (click)="deleteThisDrug(data)" class="btn btn-danger">Delete</button></td>
-        </tr>
-    </tbody>
-    </table>
-    </div>
-</div>
+<html>
+    <head>
+        Drug details
+    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <body>
+        <button (click)="getAllDrugs()" class="btn btn-success">Get Drugs List</button>
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <table class="table table-striped custab" data-pagination="true">
+                <thead>
+                    <tr>
+                        <th>Drug ID</th>
+                        <th>Drug name</th>
+                        <th>Location Available</th>
+                        <th>Manufacturer</th>
+                        <th>Marketing mode</th>
+                        <th>Expiry At</th>           
+                    </tr>
+                </thead>
+                <tbody>    
+                    <tr *ngFor="let data of drugs | paginate: { 
+                        id:'paginating_drugs', itemsPerPage: 5,
+                        currentPage: page, totalItems:totalRecords } " >
+                        <td>{{data.id}}</td> 
+                        <td>{{data.name}}</td>
+                        <td>{{data.availableAt}}</td>
+                        <td>{{data.manufacturer}}</td>
+                        <td>{{data.marketingStatus}}</td>
+                        <td>{{data.expiryAt}}</td>
+                        <td><button class="btn btn-success">
+                            <a [routerLink]="['../drug',data]">Update</a></button></td>
+                        <td><button (click)="deleteThisDrug(data)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+                <pagination-controls  id="paginating_drugs"
+                (pageChange)="page=$event"
+                data-pagination="true"
+                maxSize="15"
+                directionLinks="true"
+                autoHide="false"
+                responsive="true"
+                previousLabel="Previous"
+                nextLabel="Next"
+                screenReaderPaginationLabel="Pagination"
+                screenReaderPageLabel="page"
+                screenReaderCurrentLabel="You're on page">Hey
+                </pagination-controls>
+        </div>
+        </div>
+    
+</body>
 <!--<button (click)="deletePerson()" class="btn btn-warning">Delete</button>-->
+</html>
