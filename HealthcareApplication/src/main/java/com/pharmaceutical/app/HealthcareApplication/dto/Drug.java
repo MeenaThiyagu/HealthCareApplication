@@ -1,8 +1,8 @@
-package com.pharmaceutical.app.HealthcareApplication.drug;
+package com.pharmaceutical.app.HealthcareApplication.dto;
 
 import javax.persistence.*;
 
-import com.pharmaceutical.app.HealthcareApplication.person.Person;
+import com.pharmaceutical.app.HealthcareApplication.dto.*;
 
 @Entity
 public class Drug {

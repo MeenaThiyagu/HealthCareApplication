@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication.person;
+package com.pharmaceutical.app.HealthcareApplication.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmaceutical.app.HealthcareApplication.Response;
-import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
+import com.pharmaceutical.app.HealthcareApplication.dto.Drug;
+import com.pharmaceutical.app.HealthcareApplication.dto.Person;
+import com.pharmaceutical.app.HealthcareApplication.service.PersonService;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
@@ -24,6 +26,8 @@ public class PersonController {
 	
 	@Autowired//dependency injection
 	private PersonService personServiceObj;
+	
+	
 	
 	@RequestMapping("/persons")
 	public List<Person> getAllPerson(){

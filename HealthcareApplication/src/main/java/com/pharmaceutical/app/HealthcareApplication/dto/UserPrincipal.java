@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication;
+package com.pharmaceutical.app.HealthcareApplication.dto;
 
 import java.security.cert.CollectionCertStoreParameters;
 import java.util.Collection;

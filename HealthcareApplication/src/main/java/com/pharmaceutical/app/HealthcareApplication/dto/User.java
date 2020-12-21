@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication;
+package com.pharmaceutical.app.HealthcareApplication.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

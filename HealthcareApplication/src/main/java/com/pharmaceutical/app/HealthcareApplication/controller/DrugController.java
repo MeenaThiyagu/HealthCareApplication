@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication.drug;
+package com.pharmaceutical.app.HealthcareApplication.controller;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
+import com.pharmaceutical.app.HealthcareApplication.dto.*;
+import com.pharmaceutical.app.HealthcareApplication.service.DrugService;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController

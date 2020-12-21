@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication.person;
+package com.pharmaceutical.app.HealthcareApplication.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.pharmaceutical.app.HealthcareApplication.dto.OrderResponse;
+import com.pharmaceutical.app.HealthcareApplication.dto.Person;
 
 public interface PersonRepository extends JpaRepository<Person,String> {
 

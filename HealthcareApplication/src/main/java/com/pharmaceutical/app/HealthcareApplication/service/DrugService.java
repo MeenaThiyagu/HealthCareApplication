@@ -1,9 +1,12 @@
-package com.pharmaceutical.app.HealthcareApplication.drug;
+package com.pharmaceutical.app.HealthcareApplication.service;
 
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.pharmaceutical.app.HealthcareApplication.dto.Drug;
+import com.pharmaceutical.app.HealthcareApplication.repository.DrugRepository;
 
 @Service//spring creates instance . it is a stereotype annotation.
 public class DrugService {

@@ -1,13 +1,15 @@
-package com.pharmaceutical.app.HealthcareApplication.person;
+package com.pharmaceutical.app.HealthcareApplication.dto;
 
 import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
+import com.pharmaceutical.app.HealthcareApplication.dto.Drug;
 import java.util.*;
 @Entity
+@NamedStoredProcedureQueries({@NamedStoredProcedureQuery(name="firstProc",
+procedureName = "personDetail",parameters = {@StoredProcedureParameter(mode=ParameterMode.IN, name = "in_person_id",type=Integer.class)})})
 public class Person {
 	@Id
 	@GeneratedValue

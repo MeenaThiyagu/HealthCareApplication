@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication;
+package com.pharmaceutical.app.HealthcareApplication.config;
 import org.springframework.http.HttpMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -18,7 +18,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.junit.Before;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pharmaceutical.app.HealthcareApplication.person.Person;
+import com.pharmaceutical.app.HealthcareApplication.dto.Person;
 import junit.framework.Assert;
 
 

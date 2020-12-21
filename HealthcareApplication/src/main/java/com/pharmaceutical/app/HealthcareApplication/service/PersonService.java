@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication.person;
+package com.pharmaceutical.app.HealthcareApplication.service;
 
 import java.util.*;
 
@@ -8,7 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import com.pharmaceutical.app.HealthcareApplication.dto.Person;
 import com.pharmaceutical.app.HealthcareApplication.exceptions.DataNotFoundException;
+import com.pharmaceutical.app.HealthcareApplication.repository.PersonRepository;
 
 @CrossOrigin(origins="http://localhost:4200/")
 @Service//spring creates instance . it is a stereotype annotation.

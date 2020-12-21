@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.pharmaceutical.app.HealthcareApplication.dto.Drug;
+import com.pharmaceutical.app.HealthcareApplication.controller.*;
+import com.pharmaceutical.app.HealthcareApplication.repository.*;
 
-import com.pharmaceutical.app.HealthcareApplication.drug.Drug;
-import com.pharmaceutical.app.HealthcareApplication.drug.DrugRepository;
-import com.pharmaceutical.app.HealthcareApplication.person.PersonRepository;
 
 @Component
 public class DBWriterDrug implements ItemWriter<Drug> {

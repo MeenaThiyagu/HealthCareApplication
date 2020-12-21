@@ -1,6 +1,6 @@
 package com.pharmaceutical.app.HealthcareApplication.batch;
 
-import com.pharmaceutical.app.HealthcareApplication.drug.*;
+import com.pharmaceutical.app.HealthcareApplication.dto.*;
 
 import java.util.HashMap;
 import java.util.Map;

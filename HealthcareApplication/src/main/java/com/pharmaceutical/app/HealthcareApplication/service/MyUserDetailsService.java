@@ -1,4 +1,4 @@
-package com.pharmaceutical.app.HealthcareApplication;
+package com.pharmaceutical.app.HealthcareApplication.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -6,6 +6,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.pharmaceutical.app.HealthcareApplication.dto.User;
+import com.pharmaceutical.app.HealthcareApplication.dto.UserPrincipal;
+import com.pharmaceutical.app.HealthcareApplication.repository.UserRepository;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 

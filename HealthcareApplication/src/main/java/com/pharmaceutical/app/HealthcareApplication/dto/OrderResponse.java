@@ -1,6 +1,6 @@
 package com.pharmaceutical.app.HealthcareApplication.dto;
 
-import com.pharmaceutical.app.HealthcareApplication.person.*;
+import com.pharmaceutical.app.HealthcareApplication.dto.Person;
 
 public class OrderResponse {
 	private String emailId;
